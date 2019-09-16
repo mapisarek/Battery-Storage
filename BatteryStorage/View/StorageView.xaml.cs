@@ -52,6 +52,15 @@ namespace BatteryStorage.View
                     || battery.Model.StartsWith(Filter_Txtbox.Text, StringComparison.OrdinalIgnoreCase));
         }
 
+        //Metoda wykonująca się przy zmianie wyboru kontrolki ComboBox
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //Przypisanie indexu z tabeli do zmiennej
+            var index = SortList.SelectedIndex;
+            //Posortowanie zawartości listy według indeksu
+            storageViewModel.SortListBy(index);
+        }
+
         
     }
 }
