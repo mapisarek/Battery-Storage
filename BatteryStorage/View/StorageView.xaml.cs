@@ -97,6 +97,12 @@ namespace BatteryStorage.View
             }
         }
 
-        
+        //Wywołanie metody z viewmodelu która usuwa zaznaczone pozycje z listy
+        private void delete_btn_Click(object sender, RoutedEventArgs e)
+        {
+            storageViewModel.DeleteItems();
+        }
+
+       
     }
 }
