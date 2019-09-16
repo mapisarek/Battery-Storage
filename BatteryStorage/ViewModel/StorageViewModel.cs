@@ -28,6 +28,29 @@ namespace BatteryStorage.ViewModel
             InitList();
         }
 
+        //Metoda dodająca przedmiot do listy
+        public void AddItemToList(string name, string model, string type, double voltage, int capacity, double resistance, int levelOfCharge)
+        {
+            //Wygenerowanie identyfikatora
+            Guid guid = Guid.NewGuid();
+            guid.ToString().Substring(0, 6);
+            //Lista inicjalizacyjna nowego obiektu baterii
+            Battery battery = new Battery
+            {
+                IsSelected = false,
+                ID = guid,
+                Name = name,
+                Model = model,
+                Type = type,
+                Voltage = voltage,
+                Capacity = capacity,
+                Resistance = resistance,
+                LevelOfCharge = levelOfCharge
+            };
+            //Dodanie utworzonej baterii do listy
+            listOfBatteries.Add(battery);
+        }
+
       
     }
 }
