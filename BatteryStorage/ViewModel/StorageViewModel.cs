@@ -51,6 +51,14 @@ namespace BatteryStorage.ViewModel
             listOfBatteries.Add(battery);
         }
 
+        //Zainicjowanie listy przykładowymi danymi
+        private void InitList()
+        {
+            AddItemToList("Duracell", "Power", "AA", 1.6, 100, 500, 100);
+            AddItemToList("Centra", "Plus+", "Aku", 12, 200, 1000, 10000);
+            AddItemToList("Powerstone", "Awesome", "ABC", 2.6, 150, 900, 500);
+        }
+
       
     }
 }
