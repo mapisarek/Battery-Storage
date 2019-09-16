@@ -59,6 +59,28 @@ namespace BatteryStorage.ViewModel
             AddItemToList("Powerstone", "Awesome", "ABC", 2.6, 150, 900, 500);
         }
 
+        //Usunięcie przedmiotów z listy
+        public void DeleteItems()
+        {
+            //Utworzenie tymczasowej listy która przechowuje wybrane rekordy
+            List<Battery> tempItemsToDelete = new List<Battery>();
+
+            //Dodanie obiektów do tymczasowej listy
+            foreach (var item in listOfBatteries)
+            {
+                if (item.IsSelected)
+                {
+                    tempItemsToDelete.Add(item);
+                }
+            }
+            //Przeiterowanie przez rekordy znajdujące się w tymczasowej liście i usunięcie ich z ObservableCollection
+            foreach (var item in tempItemsToDelete)
+            {
+                listOfBatteries.Remove(item);
+            }
+        }
+
+
       
     }
 }
