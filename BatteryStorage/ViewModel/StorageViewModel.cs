@@ -81,6 +81,34 @@ namespace BatteryStorage.ViewModel
         }
 
 
-      
+        //Metoda sortująca liste
+        public void SortListBy(int index)
+        {
+            //W zależności od otrzymanego indeksu wybranie konkretnego sortowania
+            switch (index)
+            {
+                case 0:
+                    //Usunięcie sortowania jeżeli jest wybrane
+                    ItemsView.SortDescriptions.Clear();
+                    //Dodanie sortowania według parametru, tutaj akurat Name
+                    ItemsView.SortDescriptions.Add(new SortDescription("Name", ListSortDirection.Ascending));
+                    break;
+                case 1:
+
+                    ItemsView.SortDescriptions.Clear();
+                    ItemsView.SortDescriptions.Add(new SortDescription("Model", ListSortDirection.Ascending));
+
+                    break;
+                case 2:
+                    ItemsView.SortDescriptions.Clear();
+                    ItemsView.SortDescriptions.Add(new SortDescription("Type", ListSortDirection.Ascending));
+                    break;
+                case 3:
+                    break;
+            }
+        }
+
+
+       
     }
 }
