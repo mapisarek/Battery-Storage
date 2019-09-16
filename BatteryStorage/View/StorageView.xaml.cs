@@ -38,6 +38,20 @@ namespace BatteryStorage.View
             storageViewModel.ItemsView.Filter = UserFilter;
         }
 
+        //Metoda obsługująca filtr
+        private bool UserFilter(object item)
+        {
+            //Brak filtrowania w przypadku gdy string jest null
+            if (String.IsNullOrEmpty(Filter_Txtbox.Text))
+                return true;
 
+            //Zmienna sluzaca do filtrowania zawartości tabeli
+            var battery = (Battery)item;
+            //Przeszukanie nazwy/modelu w tabeli
+            return (battery.Name.StartsWith(Filter_Txtbox.Text, StringComparison.OrdinalIgnoreCase)
+                    || battery.Model.StartsWith(Filter_Txtbox.Text, StringComparison.OrdinalIgnoreCase));
+        }
+
+        
     }
 }
