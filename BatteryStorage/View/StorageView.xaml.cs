@@ -83,6 +83,20 @@ namespace BatteryStorage.View
             }
         }
 
+        private void clearFormGrid()
+        {
+            //Czyszczenie zawartości FormGridu w widoku
+            foreach (UIElement element in formGrid.Children)
+            {
+                //Jeżeli textbox ma zawartość, czyścimy jego text przy pomocy String.Empty
+                TextBox textbox = element as TextBox;
+                if (textbox != null)
+                {
+                    textbox.Text = String.Empty;
+                }
+            }
+        }
+
         
     }
 }
