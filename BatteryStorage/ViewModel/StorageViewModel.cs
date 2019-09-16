@@ -109,6 +109,30 @@ namespace BatteryStorage.ViewModel
         }
 
 
-       
+        //Zapisanie listy do pliku
+        public void SaveListToFile()
+        {
+            //Zmienne odpowiadające za otwarcie okna dialogowego
+            Microsoft.Win32.SaveFileDialog dlg = new Microsoft.Win32.SaveFileDialog();
+            dlg.FileName = "Document";
+            dlg.Filter = "Text documents (.txt)|*.txt";
+
+            Nullable<bool> result = dlg.ShowDialog();
+            //Jeżeli okno jest otwarte, zapis do pliku o wybranej nazwie.
+            if (result == true)
+            {
+                using (TextWriter tw = new StreamWriter(dlg.FileName + dlg.DefaultExt))
+                {
+                    //Pętla wpisująca wszystkie rekordy do pliku
+                    foreach (Battery battery in listOfBatteries)
+                    {
+                        tw.WriteLine("{0}, {1}, {2}, {3}, {4}, {5}", battery.ID, battery.Name, battery.Model, battery.Type, battery.Voltage, battery.Capacity, battery.LevelOfCharge);
+                    }
+                    tw.Close();
+                }
+
+                string filename = dlg.FileName;
+            }
+        }
     }
 }
