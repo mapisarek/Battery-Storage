@@ -61,6 +61,28 @@ namespace BatteryStorage.View
             storageViewModel.SortListBy(index);
         }
 
+        private void add_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            //Dodanie elementu do listy
+            try
+            {
+                storageViewModel.AddItemToList(
+                    nameTxtBox.Text,
+                    modelTxtBox.Text,
+                    typeTxtBox.Text,
+                    Int32.Parse(voltageTxtBox.Text),
+                    Int32.Parse(capacityTxtBox.Text),
+                    1500,
+                    10
+                    );
+                clearFormGrid();
+            }
+            catch
+            {
+                MessageBox.Show("Niewłaściwe dane wejściowe");
+            }
+        }
+
         
     }
 }
