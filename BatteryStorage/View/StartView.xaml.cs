@@ -20,9 +20,22 @@ namespace BatteryStorage.View
     /// </summary>
     public partial class StartView : UserControl
     {
+        public event EventHandler StartApp;
+
         public StartView()
         {
             InitializeComponent();
+        }
+
+        private void Start_Click(object sender, RoutedEventArgs e)
+        {
+            RunApp();
+        }
+
+        public void RunApp()
+        {
+            if (this.StartApp != null)
+                this.StartApp(this, new EventArgs());
         }
     }
 }
