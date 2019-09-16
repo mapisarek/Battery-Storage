@@ -9,7 +9,7 @@
     <Grid>
         <Label Content="Magazyn akumulatorów" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="60" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Height="119" Width="800"/>
         <Button Content="Start" HorizontalAlignment="Left" Margin="242,174,0,0" VerticalAlignment="Top" Width="308" Height="45" Click="Start_Click" />
-        <Image Source="C:\Users\DellPC\source\repos\BatteryStorage\BatteryStorage\akumulator-samochodowy_318-37713.jpg" Margin="-323,296,323,0"/>
-        <Image Source="C:\Users\DellPC\source\repos\BatteryStorage\BatteryStorage\batt.jpg" Margin="324,291,-324,0" />
+        <Image Source="./batt.jpg" Margin="10,296,323,0"/>
+        <Image Source="./akum.jpg" Margin="324,291,10,0" />
     </Grid>
 </UserControl>
