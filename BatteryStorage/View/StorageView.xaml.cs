@@ -109,6 +109,10 @@ namespace BatteryStorage.View
             storageViewModel.ItemsView.Refresh();
         }
 
-      
+        //Wywołanie metody z viewmodelu zapisując zawartość do pliku
+        private void save_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            storageViewModel.SaveListToFile();
+        }
     }
 }
