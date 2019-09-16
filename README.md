@@ -18,4 +18,4 @@ Due to its intended use, UI had to be made in polish language.
 
 ## Program preview
 
-<img src="https://github.com/mapisarek/Battery-Storage/Preview/Accum.PNG">
+<img src="https://raw.githubusercontent.com/mapisarek/Battery-Storage/master/Preview/Accum.PNG">
