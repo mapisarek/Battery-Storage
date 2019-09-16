@@ -103,6 +103,12 @@ namespace BatteryStorage.View
             storageViewModel.DeleteItems();
         }
 
-       
+        //Zmiana zawartości textboxu filtra odświeża widok kolekcji
+        private void Filter_Txtbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            storageViewModel.ItemsView.Refresh();
+        }
+
+      
     }
 }
